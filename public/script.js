@@ -29,7 +29,12 @@ function showProducts(products) {
 
         name.textContent = product.name;
         category.textContent = product.category;
-        stock.textContent = `Stock: ${product.stock}`;
+        if (product.stock > 0) {
+            stock.textContent = `Stock: ${product.stock}`;
+        } else {
+            stock.textContent = `Out of Stock`;
+        }
+
 
         price.classList.add('price');
         price.textContent = `£${product.price}`;
