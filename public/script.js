@@ -29,7 +29,7 @@ function showProducts(products) {
 
         name.textContent = product.name;
         category.textContent = product.category;
-        stock.textContent = product.stock;
+        stock.textContent = `Stock: ${product.stock}`;
 
         price.classList.add('price');
         price.textContent = `£${product.price}`;
