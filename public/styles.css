@@ -1,13 +1,69 @@
+:root {
+    --primary: #30628c;
+    --secondary: #52606f;
+    --tertiary: #68587a;
+
+    --on-primary: #ffffff;
+    --on-secondary: #ffffff;
+    --on-tertiary: #ffffff;
+
+    --primary-container: #cee5ff;
+    --secondary-container: #d5e4f7;
+    --tertiary-container: #efdbff;
+
+    --surface: #f7f9ff;
+    --on-surface: #181c20;
+
+    --outline: #72777f;
+
+    --error: #ba1a1a;
+    --on-error: #ffffff;
+
+    --error-container: #ffdad6;
+    --on-error-container: #93000a;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --primary: #9ccbfb;
+        --secondary: #b9c8da;
+        --tertiary: #d3bfe6;
+
+        --on-primary: #003354;
+        --on-secondary: #3a4857;
+        --on-tertiary: #504061;
+
+        --primary-container: #0f4a73;
+        --secondary-container: #3a4857;
+        --tertiary-container: #504061;
+
+        --surface: #101418;
+        --on-surface: #e0e2e8;
+
+        --outline: #8c9199;
+
+        --error: #ffb4ab;
+        --on-error: #690005;
+
+        --error-container: #93000a;
+        --on-error-container: #ffdad6;
+    }
+}
+
 body { 
     display: flex;
     flex-direction: column;
     font-family: Arial, sans-serif; 
+    background: var(--surface)
 }
 
-main {
-    margin: 2rem auto; 
-    padding: 1rem; 
-    background: rgb(0, 255, 0);
+.content {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+    justify-content: center;
 }
 
 /* == Text Formatting == */
@@ -16,16 +72,35 @@ h1 {
     text-align: center;
 }
 
+.title {
+    color: var(--on-surface);
+}
+
 
 /* == Navigation Row == */
 header {
-    background:rgb(17, 0, 255);
-    color: white;
+    max-width: 80%;
+    min-width: 60%;
+    background:var(--primary);
+    color: var(--surface);
+
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 1rem;
+
+    border: 1px var(--outline) solid;
+    border-radius: 16px;
+}
+
+#logo {
+    justify-content: start;
+    margin-left: -3rem;
+    margin-right: 40%;
 }
 
 .nav {
-    padding-left: 6rem;
-    padding-righT: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 .nav ul {
@@ -33,7 +108,8 @@ header {
     justify-content: space-between;
     gap: 1rem;
     list-style: none;
-    padding: 0;
+    padding-right: 6rem;
+    padding-left: 6rem;
 }
 
 .nav li {
@@ -44,7 +120,7 @@ header {
 /* == Shop Items == */
 
 .box {
-    border: 1px black solid;
+    border: 1px var(--outline) solid;
     border-radius: 16px;
 
     max-width: 600px;
@@ -53,7 +129,9 @@ header {
     padding: 2rem;
     margin: 1rem;
 
-    background: #36dfd1;
+    background: var(--primary-container);
+
+    color: var(--primary)
 }
 
 .box li { 
