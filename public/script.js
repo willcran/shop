@@ -19,7 +19,8 @@ function showProducts(products) {
     list.innerHTML = '';
 
     for (const product of products) {
-        const div = document.createElement('div')
+        const div = document.createElement('div');
+        const img = document.createElement('img');
         const name = document.createElement('h3');
         const category = document.createElement('h5');
         const stock = document.createElement('p');
@@ -27,8 +28,15 @@ function showProducts(products) {
 
         div.classList.add('box');
 
+        // Image
+        img.src = `/assets/${product.name}.jpg`;
+        img.alt = product.name;
+
         name.textContent = product.name;
+
+        category.classList.add('pill');
         category.textContent = product.category;
+        
         if (product.stock > 0) {
             stock.textContent = `Stock: ${product.stock}`;
         } else {
@@ -39,7 +47,7 @@ function showProducts(products) {
         price.classList.add('price');
         price.textContent = `£${product.price}`;
         
-        div.append(name, category, stock, price);
+        div.append(img, name, category, stock, price);
         list.appendChild(div);
     }
 }
