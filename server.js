@@ -16,10 +16,6 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok'});
 });
 
-app.get('/', (req, res) => {
-    res.send('ksjngfisngkjh');
-}); 
-
 app.listen(PORT, () => {
     console.log(`Shop server running at http://localhost${PORT}`);
 });

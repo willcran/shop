@@ -10,9 +10,8 @@ const products = [
     { id: 6, name: "Toaster", price: 10, category: 'appliance', stock: 10}
 ];
 
-router.get('/', (req, res) => {
-    res.json(products);
-});
+// router.get('/', (req, res) => {//     res.json(products);
+// });
 
 function parseId(id) {
     const num = Number(id);
@@ -44,6 +43,44 @@ router.get('/:id', (req, res) => {
     }
 
     res.json(product);
+});
+
+router.get('/', (req, res) => {
+    let result = [...products];
+
+    const { category, maxPrice, sort } = req.query;
+
+    if (category) {
+        result = result.filter(
+            p => p.category === category
+        );
+    }
+
+    if (maxPrice) {
+        const price = Number(maxPrice);
+
+        if (isNaN(price)) {
+            return res.status(400).json({
+                error: 'Invalid maxPrice'
+            });
+        }
+
+        result = result.filter(
+            p => p.price <= price
+        );
+    }
+
+    if (sort === 'price') {
+        result.sort((a, b) => a.price - b.price);
+    }
+
+    if (sort === 'name') {
+        result.sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
+    }
+
+    res.json(result);
 });
 
 
