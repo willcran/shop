@@ -1,4 +1,6 @@
-
+const body = document.body;
+const themeButton = document.getElementsById("themeButton");
+const themeIcon = document.getElementById("themeIcon");
 
 async function getProducts() {
     const response = await fetch('http://localhost:3000/api/products');
@@ -52,6 +54,17 @@ function showProducts(products) {
     }
 }
 
+
+
+function changeTheme() {
+    alert('sfgkjs');
+
+    // True is Dark Mode
+    // False is Light Mode
+    let use_theme = false;
+
+}
+
 async function init() {
     const list = document.querySelector('#products');
 
@@ -62,5 +75,7 @@ async function init() {
         list.textContent = "Products list was not shown. Not my fault."
     }
 }
+
+themeButton.addEventListener("click", changeTheme);
 
 init();

@@ -23,32 +23,31 @@
     --on-error-container: #93000a;
 }
 
-@media(prefers-color-scheme: dark) {
-    :root {
-        --primary: #9ccbfb;
-        --secondary: #b9c8da;
-        --tertiary: #d3bfe6;
+[page-theme="dark"] {
+    --primary: #9ccbfb;
+    --secondary: #b9c8da;
+    --tertiary: #d3bfe6;
 
-        --on-primary: #003354;
-        --on-secondary: #3a4857;
-        --on-tertiary: #504061;
+    --on-primary: #003354;
+    --on-secondary: #3a4857;
+    --on-tertiary: #504061;
 
-        --primary-container: #0f4a73;
-        --secondary-container: #3a4857;
-        --tertiary-container: #504061;
+    --primary-container: #0f4a73;
+    --secondary-container: #3a4857;
+    --tertiary-container: #504061;
 
-        --surface: #101418;
-        --on-surface: #e0e2e8;
+    --surface: #101418;
+    --on-surface: #e0e2e8;
 
-        --outline: #8c9199;
+    --outline: #8c9199;
 
-        --error: #ffb4ab;
-        --on-error: #690005;
+    --error: #ffb4ab;
+    --on-error: #690005;
 
-        --error-container: #93000a;
-        --on-error-container: #ffdad6;
-    }
+    --error-container: #93000a;
+    --on-error-container: #ffdad6;
 }
+
 
 body { 
     display: flex;
@@ -114,6 +113,24 @@ header {
 
 .nav li {
     list-style: none;
+}
+
+.themeButton {
+    padding: 0.5rem;
+    border: 1px var(--outline) solid;
+    border-radius: 100px;
+    background-color: var(--secondary);
+    color: var(--on-secondary);
+    
+    max-width: 3rem;
+    max-height: auto;
+}
+
+.themeButton img {
+    align-items: center;
+    justify-content: center;
+
+    max-width: 20px;
 }
 
 
