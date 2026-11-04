@@ -115,7 +115,7 @@ header {
     list-style: none;
 }
 
-.themeButton {
+#themeButton {
     padding: 0.5rem;
     border: 1px var(--outline) solid;
     border-radius: 100px;
@@ -126,7 +126,7 @@ header {
     max-height: auto;
 }
 
-.themeButton img {
+#themeButton img {
     align-items: center;
     justify-content: center;
 

@@ -1,5 +1,5 @@
 const body = document.body;
-const themeButton = document.getElementsById("themeButton");
+const themeButton = document.getElementById("themeButton");
 const themeIcon = document.getElementById("themeIcon");
 
 async function getProducts() {
@@ -7,7 +7,7 @@ async function getProducts() {
 
     if (!response.ok) {
         throw new Error(
-            `GitHub returned Error ` + response.status
+            `Shop returned Error ` + response.status
         );
     }
 
@@ -53,8 +53,6 @@ function showProducts(products) {
         list.appendChild(div);
     }
 }
-
-
 
 function changeTheme() {
     alert('sfgkjs');
