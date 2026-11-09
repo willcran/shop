@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body page-theme="light">
+    <main>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li id="logo">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="form.html">Admin</a>
+                    </li>
+                    <button id="themeButton">
+                        <img id="themeIcon" src="/assets/theme.png">
+                    </button>
+                </ul>
+            </div>
+        </header>
+
+        <h1>Add a product</h1>
+        <form id="addForm">
+            <label>Name
+            <input type="text" id="name" required>
+            </label><br>    
+
+            <label>Price
+            <input id="price" type="number" step="0.01" min="0" required>
+            </label><br>
+
+            <label>Category
+            <input type="text" id="category" required>
+            </label><br> 
+
+            <label>Stock
+            <input id="stock" type="number" min="0" value="0">
+            </label><br>
+        <button type="submit">Add product</button>
+        </form>
+
+        <p id="message"></p>
+        <script src="script.js" defer></script>
+    </main>
+    </body>
